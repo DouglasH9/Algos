@@ -53,12 +53,23 @@ def recursive_factorial(num):
 # =====================================Recursive Sum================================================
 
 def recursive_sum(arr):
-    i = 0
     if arr == []:
         return "empty array"
     elif len(arr) == 1:
         return arr[0]
     else:
-        return arr[i] + recursive_sum(arr[1:])
+        return arr[0] + recursive_sum(arr[1:])
 
-print recursive_sum([3,4,2,1,6])
+# print recursive_sum([])
+
+# ============================Recursive Counting of an array================================
+
+def recursive_count(arr):
+    if len(arr) == 0:
+        return "nothing in the array"
+    elif len(arr) == 1:
+        return 1
+    else:
+        return 1 + recursive_count(arr[1:])
+
+# print recursive_count([3,4,5,5,4,3,3,2])
