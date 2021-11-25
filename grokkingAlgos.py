@@ -82,4 +82,23 @@ def recursive_max_number(arr):
     sub_max = recursive_max_number(arr[1:])
     return arr[0] if arr[0] > sub_max else sub_max
 
-print recursive_max_number([4,5,8,12,23,3,5])
+# print recursive_max_number([4,5,8,12,23,3,5])
+
+# ============================Recursive Binary Search=========================================
+
+def recursive_bin_search(arr, low, high, num):
+    if high >= 1:
+        mid = 1 + (high+low)//2
+        if arr[mid] == num:
+            return mid
+        elif arr[mid] > num:
+            return recursive_bin_search(arr, low, mid-1, num)
+        else: 
+            return recursive_bin_search(arr, mid+1, high, num)
+    else:
+        return -1
+
+arr1 = [2,3,4,5,6,7,8,9,10,11,12]
+
+
+print recursive_bin_search(arr1, 0, len(arr1)-1, 1)
