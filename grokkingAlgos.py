@@ -50,3 +50,15 @@ def recursive_factorial(num):
 
 # print recursive_factorial(5)
 
+# =====================================Recursive Sum================================================
+
+def recursive_sum(arr):
+    i = 0
+    if arr == []:
+        return "empty array"
+    elif len(arr) == 1:
+        return arr[0]
+    else:
+        return arr[i] + recursive_sum(arr[1:])
+
+print recursive_sum([3,4,2,1,6])
