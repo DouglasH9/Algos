@@ -73,3 +73,13 @@ def recursive_count(arr):
         return 1 + recursive_count(arr[1:])
 
 # print recursive_count([3,4,5,5,4,3,3,2])
+
+# =============================Recursive Max Number==========================================
+
+def recursive_max_number(arr):
+    if len(arr) == 2:
+        return arr[0] if arr[0] > arr[1] else arr[1]
+    sub_max = recursive_max_number(arr[1:])
+    return arr[0] if arr[0] > sub_max else sub_max
+
+print recursive_max_number([4,5,8,12,23,3,5])
