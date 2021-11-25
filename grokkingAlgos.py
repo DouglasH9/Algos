@@ -38,4 +38,15 @@ def selectionSort(arr):
         newArr.append(arr.pop(smallest))
     return newArr
 
-print selectionSort([5,3,6,2,10])
+# print selectionSort([5,3,6,2,10])
+
+# =======================================Recursive Factorial=======================================
+
+def recursive_factorial(num):
+    if num == 1:
+        return 1
+    else:
+        return num * recursive_factorial(num - 1)
+
+# print recursive_factorial(5)
+
