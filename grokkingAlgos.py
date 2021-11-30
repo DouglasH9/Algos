@@ -91,10 +91,11 @@ def recursive_bin_search(arr, low, high, num):
         mid = 1 + (high+low)//2
         if arr[mid] == num:
             return mid
+        elif num > high:
+            return -1
         elif arr[mid] > num:
             return recursive_bin_search(arr, low, mid-1, num)
         else:
-
             return recursive_bin_search(arr, mid+1, high, num)
     else:
         return -1
