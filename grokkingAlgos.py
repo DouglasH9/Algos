@@ -104,4 +104,18 @@ def recursive_bin_search(arr, low, high, num):
 
 # print recursive_bin_search(arr1, 0, len(arr1)-1, 13)
 
+# =======================================Quicksort=============================================
+
+def quicksort(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        greater = [i for i in arr[1:] if i > pivot]
+        
+        return quicksort(less) + [pivot] + quicksort(greater)
+
+# print quicksort([3,4,6,32,1,34,100,56,20, 78])
+
 
