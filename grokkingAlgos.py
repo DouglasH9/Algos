@@ -93,12 +93,15 @@ def recursive_bin_search(arr, low, high, num):
             return mid
         elif arr[mid] > num:
             return recursive_bin_search(arr, low, mid-1, num)
-        else: 
+        else:
+
             return recursive_bin_search(arr, mid+1, high, num)
     else:
         return -1
 
-arr1 = [2,3,4,5,6,7,8,9,10,11,12]
+# arr1 = [2,3,4,5,6,7,8,9,10,11,12]
 
 
-print recursive_bin_search(arr1, 0, len(arr1)-1, 1)
+# print recursive_bin_search(arr1, 0, len(arr1)-1, 13)
+
+
