@@ -8,10 +8,5 @@ namespace Algos
         {
             Console.WriteLine("Hello World!");
         }
-
-        public bool IsPalindrome(int num)
-        {
-            
-        }
     }
 }
