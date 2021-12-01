@@ -1,0 +1,12 @@
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/bin/Debug/netcoreapp3.1/CSharpAlgos.deps.json
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/bin/Debug/netcoreapp3.1/CSharpAlgos.runtimeconfig.json
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/bin/Debug/netcoreapp3.1/CSharpAlgos.runtimeconfig.dev.json
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/bin/Debug/netcoreapp3.1/CSharpAlgos.dll
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/bin/Debug/netcoreapp3.1/CSharpAlgos.pdb
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/obj/Debug/netcoreapp3.1/CSharpAlgos.csprojAssemblyReference.cache
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/obj/Debug/netcoreapp3.1/CSharpAlgos.AssemblyInfoInputs.cache
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/obj/Debug/netcoreapp3.1/CSharpAlgos.AssemblyInfo.cs
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/obj/Debug/netcoreapp3.1/CSharpAlgos.csproj.CoreCompileInputs.cache
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/obj/Debug/netcoreapp3.1/CSharpAlgos.dll
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/obj/Debug/netcoreapp3.1/CSharpAlgos.pdb
+/Users/douglasherman/Desktop/Algos/CSharpAlgos/obj/Debug/netcoreapp3.1/CSharpAlgos.genruntimeconfig.cache
