@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace CSharpAlgos
@@ -42,6 +43,34 @@ namespace CSharpAlgos
                 }
             }
             return prefix;
+        }
+
+// ==========================Valid Parentheses======================
+// Given a string, find out if there is all parentheses are in valid sets
+        public static bool ValidParens(string str)
+        {
+            Dictionary<char, char> parensDict = new Dictionary<char, char>();
+            parensDict.Add('(', ')');
+            parensDict.Add('[',']');
+            parensDict.Add('{','}');
+
+            Stack parensStack = new Stack();
+            foreach (char paren in str)
+            {
+                if (parensDict.ContainsKey(paren))
+                {
+                    parensStack.Push(paren);
+                } else {
+                    if (parensStack.Count == 0){return false;}
+
+                    char openParen = (char)parensStack.Pop();
+                    if (parensDict[openParen] != paren)
+                    {
+                        return false;
+                    }
+                }
+            }
+            if (parensStack.Count == 0){return true;} else {return false;}
         }
     }
 }
