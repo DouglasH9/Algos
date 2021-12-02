@@ -46,7 +46,7 @@ namespace CSharpAlgos
         }
 
 // ==========================Valid Parentheses======================
-// Given a string, find out if there is all parentheses are in valid sets
+// Given a string containing just the chars "(){}[]" find out if there are valid sets of opening and closing parens
         public static bool ValidParens(string str)
         {
             Dictionary<char, char> parensDict = new Dictionary<char, char>();

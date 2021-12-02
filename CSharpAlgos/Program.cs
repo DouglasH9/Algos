@@ -11,7 +11,7 @@ namespace CSharpAlgos
             // Console.WriteLine(Algos.isNumPalindrome(423));
             string[] words = {"hello", "hell", "help", "helmet"};
             // Console.WriteLine(Algos.LongestCommonPrefix(words));
-            Console.WriteLine(Algos.ValidParens("()()()[]"));
+            Console.WriteLine(Algos.ValidParens("()"));
         }
     }
 }
