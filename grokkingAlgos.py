@@ -120,4 +120,19 @@ def quicksort(arr):
 # print quicksort([3,4,6,32,1,34,100,56,20, 78])
 
 
-# ==========================
+# ==========================Valid Parens Algo=======================================================
+
+def valid_parens(str):
+    bracket_map = {"(": ")", "[": "]",  "{": "}"}
+    open_par = set(["(", "[", "{"])
+    stack = []
+    for char in str:
+        if char in open_par:
+            stack.append(char)
+        elif stack and char == bracket_map[stack[-1]]:
+                stack.pop()
+        else:
+            return False
+    return stack == []
+
+print(valid_parens("()()("))
