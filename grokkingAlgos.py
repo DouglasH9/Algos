@@ -1,3 +1,5 @@
+from collections import deque
+
 # Binary Searches...
 # ====================================================
 def binary_search(list, item):
@@ -135,4 +137,40 @@ def valid_parens(str):
             return False
     return stack == []
 
-print(valid_parens("()()("))
+# print(valid_parens("()()("))
+
+# =========================================graphs and breadth first search================================
+# creates a graph of friends and breadth first searches for a specific type of friend
+
+# creating a graph of friends
+my_graph = {}
+my_graph["me"] = ["jim","joe", "andy", "tony"]
+my_graph["jim"] = ["joe","andy"]
+my_graph["andy"] = ["jim", "joe"]
+my_graph["joe"] = ["andy"]
+my_graph["tony"] = ["scott", "drew"]
+my_graph["scott"] = []
+my_graph["drew"] = []
+
+# silly function to define if person is one we're looking for. will make it so that it finds first person with name ending in "t"
+
+def person_with_t(name):
+    return name[-1] == "t"
+
+# creating a breadth first search algorithm
+def breadth_first_search(name):
+    search_queue = deque()
+    search_queue += my_graph[name]
+    searched_names = []
+    while search_queue:
+        person = search_queue.popleft()
+        if not person in searched_names:
+            if person_with_t(person):
+                print (f"{person} has a T at the end of their name!")
+                return True
+            else:
+                search_queue += my_graph[person]
+                searched_names.append(person)
+    return False
+
+print(breadth_first_search("me"))
