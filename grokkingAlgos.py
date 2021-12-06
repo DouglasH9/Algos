@@ -173,4 +173,31 @@ def breadth_first_search(name):
                 searched_names.append(person)
     return False
 
-print(breadth_first_search("me"))
+# print(breadth_first_search("me"))
+
+# =========================Dijkstra's Algorithm===========================================
+# Takes in a weighted graph and returns the least costly path from A to B
+
+d_graph = {}
+
+d_graph["start"] = {}
+d_graph["start"]["a"] = 6
+d_graph["start"]["b"] = 2
+d_graph["a"] = {}
+d_graph["a"]["fin"] = 1
+d_graph["b"] = {}
+d_graph["b"]["a"] = 3
+d_graph["b"]["fin"] = 5
+d_graph["fin"] = {}
+
+infinity = float("inf")
+
+costs = {}
+costs["a"] = 6
+costs["b"] = 2
+costs["fin"] = infinity
+
+parents = {}
+parents["a"] = "start"
+parents["b"] = "start"
+parents["fin"] = None
