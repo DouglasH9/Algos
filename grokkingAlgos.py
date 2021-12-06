@@ -201,3 +201,8 @@ parents = {}
 parents["a"] = "start"
 parents["b"] = "start"
 parents["fin"] = None
+
+processed = []
+
+node = find_lowest_cost_node(costs)
+while
