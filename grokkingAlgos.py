@@ -166,7 +166,7 @@ def breadth_first_search(name):
         person = search_queue.popleft()
         if not person in searched_names:
             if person_with_t(person):
-                print (f"{person} has a T at the end of their name!")
+                # print (f"{person} has a T at the end of their name!")
                 return True
             else:
                 search_queue += my_graph[person]
@@ -214,14 +214,19 @@ def find_lowest_cost_node(costs):
             lowest_cost_node = node
     return lowest_cost_node
 
-node = find_lowest_cost_node(costs)
-while node is not None:
-    cost = costs[node]
-    neighbors = d_graph[node]
-    for neighbor in neighbors.keys():
-        new_cost = cost + neighbors[neighbor]
-        if costs[neighbor] > new_cost:
-            costs[neighbor] = new_cost
-            parents[neighbor] = node
-        processed.append(node)
-        node = find_lowest_cost_node(costs)
+
+def dijkstra():
+    node = find_lowest_cost_node(costs)
+    while node is not None:
+        cost = costs[node]
+        neighbors = d_graph[node]
+        for neighbor in neighbors.keys():
+            new_cost = cost + neighbors[neighbor]
+            if costs[neighbor] > new_cost:
+                costs[neighbor] = new_cost
+                parents[neighbor] = node
+            processed.append(node)
+            # print(processed)
+            node = find_lowest_cost_node(costs)
+    return node
+print(find_lowest_cost_node(costs))
