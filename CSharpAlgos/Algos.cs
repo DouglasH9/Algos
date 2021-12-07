@@ -72,5 +72,23 @@ namespace CSharpAlgos
             }
             if (parensStack.Count == 0){return true;} else {return false;}
         }
+
+// =======================================Remove Duplicates==============================================
+// Given a sorted array, move a single instance of the number to the front of the array
+        public static int[] FrontLoadDuplicates(int[] nums)
+        {
+            int[] empty = new int[0];
+            if (nums.Length == 0) {return empty;}
+            int i = 0;
+            for (int j = 1; j < nums.Length; j++)
+            {
+                if (nums[j] != nums[i])
+                {
+                    i++;
+                    nums[i] = nums[j];
+                }
+            }
+            return nums;
+        }
     }
 }
