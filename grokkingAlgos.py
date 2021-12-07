@@ -183,11 +183,14 @@ d_graph = {}
 d_graph["start"] = {}
 d_graph["start"]["a"] = 6
 d_graph["start"]["b"] = 2
+
 d_graph["a"] = {}
 d_graph["a"]["fin"] = 1
+
 d_graph["b"] = {}
 d_graph["b"]["a"] = 3
 d_graph["b"]["fin"] = 5
+
 d_graph["fin"] = {}
 
 infinity = float("inf")
@@ -215,18 +218,19 @@ def find_lowest_cost_node(costs):
     return lowest_cost_node
 
 
-def dijkstra():
+
+node = find_lowest_cost_node(costs)
+while node is not None:
+    cost = costs[node]
+    neighbors = d_graph[node]
+    for neighbor in neighbors.keys():
+        new_cost = cost + neighbors[neighbor]
+        if costs[neighbor] > new_cost:
+            costs[neighbor] = new_cost
+            parents[neighbor] = node
+    processed.append(node)
+    # print(processed)
     node = find_lowest_cost_node(costs)
-    while node is not None:
-        cost = costs[node]
-        neighbors = d_graph[node]
-        for neighbor in neighbors.keys():
-            new_cost = cost + neighbors[neighbor]
-            if costs[neighbor] > new_cost:
-                costs[neighbor] = new_cost
-                parents[neighbor] = node
-            processed.append(node)
-            # print(processed)
-            node = find_lowest_cost_node(costs)
-    return node
-print(find_lowest_cost_node(costs))
+
+print("Cost from the start to each node:")
+print(costs)
