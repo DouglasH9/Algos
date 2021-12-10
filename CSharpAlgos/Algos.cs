@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CSharpAlgos
 {
@@ -90,5 +91,66 @@ namespace CSharpAlgos
             }
             return nums;
         }
+
+// =======================================Remove Element===================================================
+// Given an array of nums and an integer val, remove all occurences of val in num in-place. The relative order of the elements may be changed.
+
+        public static int RemoveElement(int[] nums, int val)
+        {
+            int i = 0;
+            for (int j = 0; j < nums.Length; j++)
+            {
+                if (nums[j] != val) {
+                    nums[i] = nums[j];
+                    i++;
+                }
+            }
+            return i;
+        }
+
+// =======================================Max Profit of a "Stock"===============================================
+//  Given an array of prices where prices[i] is the price of a given stock on the i-th day, maximize profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock
+
+// slow solution:
+
+        public static int MaximumProfit(int[] prices)
+        {
+            int maxProfit = 0;
+            for(int i = 0; i < prices.Length -1; i ++)
+            {
+                for(int j = i + 1; j < prices.Length; j++)
+                {
+                    int profit = prices[j] - prices[i];
+                    if(profit > maxProfit)
+                    {
+                        maxProfit = profit;
+                    }
+                }
+            }
+            return maxProfit;
+        }
+
+    // Fast solution:
+        public static int FastMaximumProfit(int[] prices)
+        {
+            int minPrice = Int32.MaxValue;
+            int maxProfit = 0;
+            for (int i = 0; i < prices.Length; i++)
+            {
+                if(prices[i] < minPrice)
+                {
+                    minPrice = prices[i];
+                }
+                else if (prices[i] - minPrice > maxProfit)
+                {
+                    maxProfit = prices[i] - minPrice;
+                }
+            }
+            return maxProfit;
+        }
+
+        // ========================Advent of Code Day 1 problem 1======================================
+
+        
     }
 }
