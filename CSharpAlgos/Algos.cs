@@ -7,6 +7,8 @@ namespace CSharpAlgos
 {
     public static class Algos
     {
+        private const int V = 2;
+
         public static void Test()
         {
             Console.WriteLine("Testing...");
@@ -149,8 +151,27 @@ namespace CSharpAlgos
             return maxProfit;
         }
 
-        // ========================Advent of Code Day 1 problem 1======================================
+        // ========================Advent of Code Day 1 problem 2======================================
 
-        
+        public static int AdventDepths(List<string> depths)
+        {
+            List<int> depthsInts = depths.Select(d => int.Parse(d)).ToList();
+            List<int> slideWindowDepths = new List<int>();
+            
+            for(int i = 2; i < depthsInts.Count; i++)
+            {
+                int window = (depthsInts[i] + depthsInts[i-1] + depthsInts[i-2]);
+                slideWindowDepths.Add(window);
+            }
+            int counter = 0;
+            for(int j =1; j < slideWindowDepths.Count; j++)
+            {
+                if (slideWindowDepths[j] > slideWindowDepths[j-1])
+                {
+                    counter++;
+                }
+            }
+            return counter;
+        }
     }
 }
