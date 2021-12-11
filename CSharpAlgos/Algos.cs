@@ -157,7 +157,7 @@ namespace CSharpAlgos
         {
             List<int> depthsInts = depths.Select(d => int.Parse(d)).ToList();
             List<int> slideWindowDepths = new List<int>();
-            
+
             for(int i = 2; i < depthsInts.Count; i++)
             {
                 int window = (depthsInts[i] + depthsInts[i-1] + depthsInts[i-2]);
@@ -173,5 +173,27 @@ namespace CSharpAlgos
             }
             return counter;
         }
+    // =================================Merge 2 Singly linked lists==================================
+    // Given two sorted singly linked lists, merge them together in one SORTED list
+        // public List<int> MergeTwoLists(List<int> list1, List<int> list2) {
+        //     if (list1 == null)
+        //     {
+        //         return list2;
+        //     }
+        //     else if (list2 == null)
+        //     {
+        //         return list1;
+        //     }
+        //     else if (list1.val < list2.val)
+        //     {
+        //         list1.next = MergeTwoLists(list1.next, list2);
+        //         return list1;
+        //     }
+        //     else 
+        //     {
+        //         list2.next = MergeTwoLists(list1, list2.next);
+        //         return list2;
+        //     }
+        // }
     }
 }
