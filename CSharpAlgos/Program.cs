@@ -18,8 +18,9 @@ namespace CSharpAlgos
             // Console.WriteLine(Algos.RemoveElement(arr, 3));
             // Console.WriteLine(Algos.MaximumProfit(arr2));
             // Console.WriteLine(Algos.FastMaximumProfit(arr2));
-            List<string> depths = System.IO.File.ReadLines("adventDayOne.txt").ToList();
-            Console.WriteLine(Algos.AdventDepths(depths));
+            // List<string> depths = System.IO.File.ReadLines("adventDayOne.txt").ToList();
+            // Console.WriteLine(Algos.AdventDepths(depths));
+            Console.WriteLine(Algos.LengthOfLastWord("a "));
         }
     }
 }

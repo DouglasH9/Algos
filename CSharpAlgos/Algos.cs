@@ -195,5 +195,29 @@ namespace CSharpAlgos
         //         return list2;
         //     }
         // }
+
+        // ================================find length of last word=================================
+        // Given a string, find out the length of the last word in the string
+        public static int LengthOfLastWord(string sentence)
+        {
+            int j = 0;
+
+            if(sentence.Length == 1 && sentence[0] != ' ' && sentence[0] != '.' && sentence[0] != '?' && sentence[0] != '!')
+            {return j+1;}
+
+            else{
+                for(int i = sentence.Length - 1; i > -1; i--)
+                {
+                    if(sentence[i] != ' ' && sentence[i] != '.' && sentence[i] != '?' && sentence[i] != '!')
+                    {j++;}
+                    else if (j > 0)
+                    {
+                        return j;
+                    }
+                    Console.WriteLine(i);
+                }
+                return j;
+            }
+        }
     }
 }
