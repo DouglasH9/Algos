@@ -85,9 +85,13 @@ def merge(nums1, m, nums2, n):
 # Alternate solution that uses less memory by starting from the end and doesn't create copy of nums1
 
 def merge_two_sorted_alt(nums1, m, nums2, n):
+
+    # set p1 and p2 to point to the ends of their arrays
     p1 = m - 1
     p2 = n - 1
     
+    # move p backwards through the array, each time writing the smallest value pointed at by p1 or p2
+    # this solution is better
     for p in range(n + m -1, -1, -1):
         if p2 < 0:
             break
