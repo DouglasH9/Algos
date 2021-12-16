@@ -16,7 +16,7 @@ def addStrings(num1, num2):
         p2 = len(num2) - 1
         while p1 >= 0 or p2 >= 0:
             x1 = ord(num1[p1]) - ord("0") if p1 >= 0 else 0 
-            x2 = ord(num2[p2]) - ord("0") if p1 >= 0 else 0
+            x2 = ord(num2[p2]) - ord("0") if p2 >= 0 else 0
             value = (x1 + x2 + carry) % 10
             carry = (x1 + x2 + carry) // 10
             res.append(value)
@@ -28,7 +28,7 @@ def addStrings(num1, num2):
             
         return "".join(str(x) for x in res[::-1])
 
-# print(addStrings("11", "123"))
+print(addStrings("11", "123"))
 
 # =========================================First Unique Character in a string===================================
 
@@ -46,4 +46,4 @@ def firstUniqChar(s):
                 return i
         return -1
 
-print(firstUniqChar("ddouglasherman"))
+# print(firstUniqChar("ddouglasherman"))
