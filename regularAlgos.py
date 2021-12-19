@@ -192,5 +192,15 @@ def romanToInt(romanNum):
 
 # print(romanToInt("MCDXXIII"))
 
-# back to front approach (faster and more efficient)...
+# back to front approach (slightly more efficient, looks better in interviews)...
 
+def romanToInt2(romanNum):
+    total = romans.get(romanNum[-1])
+    for i in reversed(range(len(romanNum) - 1)):
+        if romans[romanNum[i]] < romans[romanNum[i + 1]]:
+            total -= romans[romanNum[i]]
+        else: 
+            total += romans[romanNum[i]]
+    return total
+
+print (romanToInt2("MCDXXIII"))
