@@ -261,8 +261,18 @@ class BinTreeNode(object):
         else:
             self.data = data
 
+    def printBinTree(self):
+        if self.left:
+            self.left.printBinTree()
+        print(self.data),
+        if self.right:
+            self.right.printBinTree()
+
 # Create Instance of Node and start tree
 root = BinTreeNode(1)
+root.insertToBinTree(2)
+root.insertToBinTree(3)
+root.printBinTree()
 
 
 
