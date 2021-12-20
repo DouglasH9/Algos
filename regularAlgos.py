@@ -231,3 +231,13 @@ def removeDuplicates(nums):
         
 
 removeDuplicates([1,2,2,3,4,5,5,5,5,5,6,6,7])
+
+# ================================================Binary Tree Craziness===========================================
+
+class BinTreeNode(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
