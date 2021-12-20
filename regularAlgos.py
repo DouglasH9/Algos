@@ -245,15 +245,15 @@ class BinTreeNode(object):
     def insertToBinTree(self, data, song):
         # if node contains data...
         if self.data:
-            # if the data of node we're looking at is less than the data of node to be inserted...
+            # if the data for the node to be inserted is less than current node...
             if data < self.data:
                 # insert node as left child if left is equal to None
                 if self.left is None:
                     self.left = BinTreeNode(data, song)
-                # else check to see if next left child is less than node to insert
+                # else run insertToBinTree on next left child node
                 else:
                     self.left.insertToBinTree(data, song)
-            # if data of node is greater than node to insert...
+            # if data of node to insert is greater than current node...
             elif data > self.data:
                 if self.right is None:
                     self.right = BinTreeNode(data, song)
@@ -269,7 +269,7 @@ class BinTreeNode(object):
         if self.right:
             self.right.printBinTree()
 
-# Create Instance of Node and start tree
+# Create Instance of Node, and call it root to start tree
 root = BinTreeNode(1, "PDA")
 root.insertToBinTree(2, "The Weekenders")
 root.insertToBinTree(3, "Sedona")
