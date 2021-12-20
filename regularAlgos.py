@@ -220,9 +220,14 @@ Do not allocate extra space for another array. You must do this by modifying the
 def removeDuplicates(nums):
     if (len(nums) == 0):
         return 0
-    for i in range (1, len(nums)):
+    i = 0
+    while (i < len(nums)-1):
         if (nums[i] == nums[i+1]):
-            nums.remove(nums[i+1])
+            del nums[i]
+        else:
+            i += 1
+    print(nums)
     return nums
+        
 
-print(removeDuplicates([1,2,2,3,4,5,5,6,6,7]))
+removeDuplicates([1,2,2,3,4,5,5,5,5,5,6,6,7])
