@@ -236,42 +236,46 @@ def removeDuplicates(nums):
 # Define structure of BinTreeNode
 class BinTreeNode(object):
     # initialize the attributes
-    def __init__(self, data):
+    def __init__(self, data, song):
         self.data = data
+        self.song = song
         self.left = None
         self.right = None
     # method to insert new nodes into Binary Tree
-    def insertToBinTree(self, data):
+    def insertToBinTree(self, data, song):
         # if node contains data...
         if self.data:
             # if the data of node we're looking at is less than the data of node to be inserted...
             if data < self.data:
                 # insert node as left child if left is equal to None
                 if self.left is None:
-                    self.left = BinTreeNode(data)
+                    self.left = BinTreeNode(data, song)
                 # else check to see if next left child is less than node to insert
                 else:
-                    self.left.insertToBinTree(data)
+                    self.left.insertToBinTree(data, song)
             # if data of node is greater than node to insert...
             elif data > self.data:
                 if self.right is None:
-                    self.right = BinTreeNode(data)
+                    self.right = BinTreeNode(data, song)
                 else:
-                    self.right.insertToBinTree(data)
+                    self.right.insertToBinTree(data, song)
         else:
             self.data = data
 
     def printBinTree(self):
         if self.left:
             self.left.printBinTree()
-        print(self.data),
+        print(self.data, self.song),
         if self.right:
             self.right.printBinTree()
 
 # Create Instance of Node and start tree
-root = BinTreeNode(1)
-root.insertToBinTree(2)
-root.insertToBinTree(3)
+root = BinTreeNode(1, "PDA")
+root.insertToBinTree(2, "The Weekenders")
+root.insertToBinTree(3, "Sedona")
+root.insertToBinTree(10, "Ju$t")
+root.insertToBinTree(12, "Shadow")
+root.insertToBinTree(8, "NightCall")
 root.printBinTree()
 
 
