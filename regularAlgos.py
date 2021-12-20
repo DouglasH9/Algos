@@ -230,14 +230,42 @@ def removeDuplicates(nums):
     return nums
         
 
-removeDuplicates([1,2,2,3,4,5,5,5,5,5,6,6,7])
+# removeDuplicates([1,2,2,3,4,5,5,5,5,5,6,6,7])
 
 # ================================================Binary Tree Craziness===========================================
-
+# Define structure of BinTreeNode
 class BinTreeNode(object):
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+    # initialize the attributes
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+    # method to insert new nodes into Binary Tree
+    def insertToBinTree(self, data):
+        # if node contains data...
+        if self.data:
+            # if the data of node we're looking at is less than the data of node to be inserted...
+            if data < self.data:
+                # insert node as left child if left is equal to None
+                if self.left is None:
+                    self.left = BinTreeNode(data)
+                # else check to see if next left child is less than node to insert
+                else:
+                    self.left.insertToBinTree(data)
+            # if data of node is greater than node to insert...
+            elif data > self.data:
+                if self.right is None:
+                    self.right = BinTreeNode(data)
+                else:
+                    self.right.insertToBinTree(data)
+        else:
+            self.data = data
+
+# Create Instance of Node and start tree
+root = BinTreeNode(1)
+
+
+
+
 
 
