@@ -232,6 +232,8 @@ def removeDuplicates(nums):
 
 # removeDuplicates([1,2,2,3,4,5,5,5,5,5,6,6,7])
 
+
+
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
 class BinTreeNode(object):
@@ -243,7 +245,7 @@ class BinTreeNode(object):
         self.right = None
     # method to insert new nodes into Binary Tree
     def insertToBinTree(self, data, song):
-        # if node contains data...
+        # if current node contains data...
         if self.data:
             # if the data for the node to be inserted is less than current node...
             if data < self.data:
