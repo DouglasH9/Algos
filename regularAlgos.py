@@ -232,6 +232,23 @@ def removeDuplicates(nums):
 
 # removeDuplicates([1,2,2,3,4,5,5,5,5,5,6,6,7])
 
+# ================================Binary Search=================================
+def binary_search(arr, target):
+
+    left = 0
+    right = len(arr)-1
+    while(left <= right):
+        mid = (left + right) // 2
+        if (arr[mid] == target):
+            return mid
+        elif(target < arr[mid]):
+            right = mid - 1
+        else:
+            left = mid + 1
+    return -1
+
+# print(binary_search([1,2,4,5,6,7,8,9], 9))
+
 
 
 # ================================================Binary Tree Craziness===========================================
@@ -278,7 +295,7 @@ root.insertToBinTree(3, "Sedona")
 root.insertToBinTree(10, "Ju$t")
 root.insertToBinTree(12, "Shadow")
 root.insertToBinTree(8, "NightCall")
-root.printBinTree()
+# root.printBinTree()
 
 
 
