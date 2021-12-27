@@ -249,8 +249,27 @@ def binary_search(arr, target):
 
 # print(binary_search([1,2,4,5,6,7,8,9], 9))
 
+# ================================================Search Insert Position==========================================
+"""
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
+You must write an algorithm with O(log n) runtime complexity.
+"""
 
+def searchInsert(arr, target):
+    left = 0
+    right = len(arr) - 1
+    while (left <= right):
+        mid = left + right // 2
+        if (arr[mid] == target):
+            return mid
+        elif (target < mid):
+            right = mid - 1
+        else: 
+            left = mid + 1
+    return left
+
+print(searchInsert([1,2,4,5,6,7,8], 3))
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
 class BinTreeNode(object):
