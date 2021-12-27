@@ -269,7 +269,7 @@ def searchInsert(arr, target):
             left = mid + 1
     return left
 
-print(searchInsert([1,2,4,5,6,7,8], 3))
+print(searchInsert([1,2,3,4,5,6,7,8], 3))
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
 class BinTreeNode(object):
