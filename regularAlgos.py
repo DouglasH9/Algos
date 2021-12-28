@@ -1,5 +1,6 @@
 from collections import Counter;
 from math import e, log
+from typing import List
 # from typing import ValuesView;
 
 # Given two non-negative integers, num1 and num2 represented as string, return the sum of num1 and num2 as a string.
@@ -269,7 +270,27 @@ def searchInsert(arr, target):
             left = mid + 1
     return left
 
-print(searchInsert([1,2,3,4,5,6,7,8], 3))
+# print(searchInsert([1,2,3,4,5,6,7,8], 3))
+
+# ================================================Squares of an assorted array====================================
+"""
+Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+"""
+def sortedSquares(arr: List[int]) -> List[int]:
+    n = len(arr)
+    resultArr = [0] * n
+    left = 0
+    right = n - 1
+    for i in range(0, n-1):
+        if (abs(arr[left]) > abs(arr[right])):
+            square = arr[left]
+            left += 1
+        else:
+            square = arr[right]
+            right -= 1
+        resultArr[i] = square * square
+    return resultArr
+
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
 class BinTreeNode(object):
