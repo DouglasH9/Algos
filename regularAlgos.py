@@ -281,15 +281,17 @@ def sortedSquares(arr: List[int]) -> List[int]:
     resultArr = [0] * n
     left = 0
     right = n - 1
-    for i in range(0, n-1):
-        if (abs(arr[left]) > abs(arr[right])):
-            square = arr[left]
-            left += 1
-        else:
+    for i in range(right, -1, -1):
+        if (abs(arr[left]) < abs(arr[right])):
             square = arr[right]
             right -= 1
+        else:
+            square = arr[left]
+            left += 1
         resultArr[i] = square * square
     return resultArr
+
+print(sortedSquares([-10, -4, 1, 2, 5, 11]))
 
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
