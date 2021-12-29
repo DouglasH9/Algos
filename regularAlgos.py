@@ -291,7 +291,26 @@ def sortedSquares(arr: List[int]) -> List[int]:
         resultArr[i] = square * square
     return resultArr
 
-print(sortedSquares([-10, -4, 1, 2, 5, 11]))
+# print(sortedSquares([-10, -4, 1, 2, 5, 11]))
+
+# ================================================Rotate Array====================================================
+"""
+Given an array, rotate the array to the right by k steps, where k is non-negative.
+"""
+
+# temp array solution
+def rotateArr1(nums: List[int], k: int) -> List[int]:
+    n = len(nums)
+    tempArr = [0] * n
+    for i in range(n):
+        tempArr[(i + k) % n] = nums[i]
+    nums[:] = tempArr
+    return nums
+
+rotated = rotateArr1([1,2,3,4,5,6], 2)
+print(rotated)
+
+
 
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
