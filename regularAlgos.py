@@ -307,10 +307,30 @@ def rotateArr1(nums: List[int], k: int) -> List[int]:
     nums[:] = tempArr
     return nums
 
-rotated = rotateArr1([1,2,3,4,5,6], 2)
-print(rotated)
+# rotated = rotateArr1([1,2,3,4,5,6], 2)
+# print(rotated)
 
+# ================================================Move zeroes=====================================================
+"""
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
+Note that you must do this in-place without making a copy of the array.
+"""
+
+def moveZeroes(nums: List[int]) -> List[int]:
+# two pointers to look at values in nums, i will look for zeroes and j will keep track of nums in front of zeroes
+    i = 0
+    j = 0
+    while j < len(nums):
+        if nums[j] == 0:
+            j += 1
+        else:
+            nums[i], nums[j] = nums[j], nums[i]
+            i += 1
+            j += 1
+    return nums
+
+print(moveZeroes([1,0,2,0,3,4,5,0,9]))
 
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
