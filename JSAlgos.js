@@ -102,7 +102,7 @@ const splitStr = (s) => {
     return result
 }
 
-
+// algo that reverses array
 const reverseArr = (arr) => {
     revResult = []
     for (let i = (arr.length - 1); i > -1; i--){
@@ -111,9 +111,23 @@ const reverseArr = (arr) => {
     return revResult
 }
 
+const reverseWords = (s) => {
+    let reversedWord = ""
+    let finalReverseSent = ""
+
+    for (let i = 0; i < s.length; i++){
+        if(s[i] !== " "){
+            reversedWord = s[i] + reversedWord;
+        }
+        if(s[i] === " " || i + 1 === s.length){
+            finalReverseSent += reversedWord + " ";
+            reversedWord = "";
+        }
+    }
+    return finalReverseSent.trim();
+}
 
 
-
-reverseWords("Hey, how's it going?")
+console.log(reverseWords("Hey, how's it going?"))
 
 
