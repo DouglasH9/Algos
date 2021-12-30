@@ -370,7 +370,7 @@ def reverseString(s: List[str]) -> List[str]:
         rP -= 1
     return s
 
-print(reverseString(["d", "o", "u","g", "h"]))
+# print(reverseString(["d", "o", "u","g", "h"]))
 
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
