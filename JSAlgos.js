@@ -81,24 +81,39 @@ var climbStairs = function(n) {
 // ===============================================Reverse Words in a String================================================
 // Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
 
+// split string algo. removes spaces in string and splits words with their punctiation into an array
 const splitStr = (s) => {
     let result = [];
     temp = "";
     for (let i = 0; i < s.length; i++){
         if (s[i] == " "){
+            // if it's a space, push temp and reset it to an empty string
             result.push(temp)
             temp=""
         } else {
+            // if it's a char, push char into temp
             temp += s[i]
         }
     }
     if (temp !== ""){
+        // pushes the last temp string into the array
         result.push(temp)
     }
     return result
 }
-// console.log(splitStr("hello, how are you?"))
 
 
+const reverseArr = (arr) => {
+    revResult = []
+    for (let i = (arr.length - 1); i > -1; i--){
+        revResult.push(arr[i])
+    }
+    return revResult
+}
+
+
+
+
+reverseWords("Hey, how's it going?")
 
 
