@@ -85,9 +85,20 @@ const splitStr = (s) => {
     let result = [];
     temp = "";
     for (let i = 0; i < s.length; i++){
-        if ()
+        if (s[i] == " "){
+            result.push(temp)
+            temp=""
+        } else {
+            temp += s[i]
+        }
     }
-    
+    if (temp !== ""){
+        result.push(temp)
+    }
+    return result
 }
+// console.log(splitStr("hello, how are you?"))
+
+
 
 
