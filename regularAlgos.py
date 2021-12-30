@@ -341,7 +341,19 @@ Return the indices of the two numbers, index1 and index2, added by one as an int
 The tests are generated such that there is exactly one solution. You may not use the same element twice.
 """
 def twoSum(nums: List[int], target: int) -> List [int]:
-    
+    lPointer = 0
+    rPointer = len(nums) - 1
+    while(lPointer <= rPointer):
+        if (nums[lPointer] + nums[rPointer] == target):
+            return [lPointer, rPointer]
+        elif(nums[lPointer] + nums[rPointer] < target):
+            lPointer += 1
+        else:
+            rPointer -= 1
+    return [-1,-1]
+
+# print(twoSum([1,2,3,4,5,6], 11))
+
 
 
 # ================================================Binary Tree Craziness===========================================
