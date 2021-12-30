@@ -354,7 +354,23 @@ def twoSum(nums: List[int], target: int) -> List [int]:
 
 # print(twoSum([1,2,3,4,5,6], 11))
 
+# ================================================Reverse String==================================================
+"""
+Write a function that reverses a string. The input string is given as an array of characters s.
 
+You must do this by modifying the input array in-place with O(1) extra memory.
+"""
+
+def reverseString(s: List[str]) -> List[str]:
+    lP = 0
+    rP = len(s) -1
+    while (lP <= rP):
+        s[lP], s[rP] = s[rP], s[lP]
+        lP += 1
+        rP -= 1
+    return s
+
+print(reverseString(["d", "o", "u","g", "h"]))
 
 # ================================================Binary Tree Craziness===========================================
 # Define structure of BinTreeNode
