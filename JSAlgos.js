@@ -124,7 +124,7 @@ const reverseWords = (s) => {
             reversedWord = "";
         }
     }
-    return finalReverseSent.trim();
+    // return finalReverseSent.trim();
 }
 
 
@@ -135,6 +135,20 @@ const reverseWords = (s) => {
 
 // If there are two middle nodes, return the second middle node.
 
+// Output to an array solution
 
+// Definition for singly-linked list.
+function ListNode(val, next) {
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+
+const middleNode = (head) => {
+    let arr = [head];
+    while(arr[arr.length - 1].next != null){
+        arr.push(arr[arr.length - 1].next);
+    }
+    return arr[Math.trunc(arr.length/ 2)];
+};
 
 
