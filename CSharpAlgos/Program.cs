@@ -23,6 +23,7 @@ namespace CSharpAlgos
             // Console.WriteLine(Algos.LengthOfLastWord("a "));
             BinTree newTree = new BinTree();
             Node root = new Node(3);
+            newTree.InsertToBinTree(root.val);
             newTree.InsertToBinTree(4);
             newTree.InsertToBinTree(7);
             newTree.InsertToBinTree(11);
@@ -30,6 +31,10 @@ namespace CSharpAlgos
             newTree.InsertToBinTree(14);
             newTree.InsertToBinTree(21);
             newTree.DisplayBinTreeInOrderTrav();
+            Console.WriteLine("__________________________");
+            newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.PreOrder);
+            Console.WriteLine("__________________________");
+            newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.PostOrder);
         }
     }
 }

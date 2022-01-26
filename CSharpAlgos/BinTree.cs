@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+
 
 namespace CSharpAlgos
 {
@@ -22,7 +20,7 @@ namespace CSharpAlgos
     public class BinTree
     {
         // declare valueless Node as _root
-        private Node _root;
+        public Node _root;
 
         // declare BinTree object with _root Node having a value of null
         public BinTree()
@@ -97,7 +95,7 @@ namespace CSharpAlgos
 
         public void PrintTree(Node root, BinTreeTraversal treeTraversal)
         {
-            Action printValue = delegate(int v)
+            Action<int> printValue = delegate(int v)
             {
                 Console.WriteLine(v + " ");
             };
@@ -117,7 +115,7 @@ namespace CSharpAlgos
             }
         }
 
-        public void PreOrderTraversal(Action action, Node root)
+        public void PreOrderTraversal(Action<int> action, Node root)
         {
             if (root == null)
             {
@@ -128,7 +126,7 @@ namespace CSharpAlgos
             PreOrderTraversal(action, root.right);
         }
 
-        public void InOrderTraversal(Action action, Node root)
+        public void InOrderTraversal(Action<int> action, Node root)
         {
             if (root == null)
             {
@@ -139,7 +137,7 @@ namespace CSharpAlgos
             InOrderTraversal(action, root.right);
         }
 
-        public void PostOrderTraversal(Action action, Node root)
+        public void PostOrderTraversal(Action<int> action, Node root)
         {
             if (root == null)
             {
