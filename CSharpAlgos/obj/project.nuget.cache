@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "RLbSDayjHyEorarhiGc0E0bbdWtfNgKFVLSSmIszYenReAEwVm1OyTACiNtwZUsamAoSMmymJWnXQh5OIDXYRg==",
+  "dgSpecHash": "7K2dcK2wy2gTmneIyHULrlJl8vcg687DHLIYBhUI/v5prSoH1d4TaupELp1bvYlM8iJHbJuItw265T8d6MpulQ==",
   "success": true,
   "projectFilePath": "/Users/douglasherman/Desktop/Algos/CSharpAlgos/CSharpAlgos.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/douglasherman/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/douglasherman/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.22/microsoft.netcore.app.host.osx-x64.3.1.22.nupkg.sha512"
+  ],
   "logs": []
 }

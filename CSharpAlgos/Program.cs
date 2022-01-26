@@ -20,7 +20,16 @@ namespace CSharpAlgos
             // Console.WriteLine(Algos.FastMaximumProfit(arr2));
             // List<string> depths = System.IO.File.ReadLines("adventDayOne.txt").ToList();
             // Console.WriteLine(Algos.AdventDepths(depths));
-            Console.WriteLine(Algos.LengthOfLastWord("a "));
+            // Console.WriteLine(Algos.LengthOfLastWord("a "));
+            BinTree newTree = new BinTree();
+            Node root = new Node(3);
+            newTree.InsertToBinTree(4);
+            newTree.InsertToBinTree(7);
+            newTree.InsertToBinTree(11);
+            newTree.InsertToBinTree(8);
+            newTree.InsertToBinTree(14);
+            newTree.InsertToBinTree(21);
+            newTree.DisplayBinTreeInOrderTrav();
         }
     }
 }

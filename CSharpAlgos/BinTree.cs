@@ -36,7 +36,36 @@ namespace CSharpAlgos
         }
         private void InsertRecur(Node root, Node newNode)
         {
-            
+            if (root == null)
+            {
+                root = newNode;
+            }
+            if (newNode.val < root.val)
+            {
+                if(root.left == null)
+                {
+                    root.left = newNode;
+                }
+                else InsertRecur(root.left, newNode);
+            }
+            else
+            {
+                if (root.right == null)
+                    root.right = newNode;
+                else
+                    InsertRecur(root.right, newNode);
+            }
+        }
+        private void DisplayBinTreeInOrderTrav(Node root)
+        {
+            if (root == null) return;
+            DisplayBinTreeInOrderTrav(root.left);
+            Console.WriteLine(root.val + " ");
+            DisplayBinTreeInOrderTrav(root.right);
+        }
+        public void DisplayBinTreeInOrderTrav()
+        {
+            DisplayBinTreeInOrderTrav(_root);
         }
     }
 
