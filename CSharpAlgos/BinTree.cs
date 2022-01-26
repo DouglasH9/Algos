@@ -88,7 +88,67 @@ namespace CSharpAlgos
         {
             DisplayBinTreeInOrderTrav(_root);
         }
-        
+        public enum BinTreeTraversal
+        {
+            PreOrder,
+            InOrder,
+            PostOrder
+        }
+
+        public void PrintTree(Node root, BinTreeTraversal treeTraversal)
+        {
+            Action printValue = delegate(int v)
+            {
+                Console.WriteLine(v + " ");
+            };
+
+            switch (treeTraversal)
+            {
+                case BinTreeTraversal.PreOrder:
+                    PreOrderTraversal(printValue, root);
+                    break;
+                case BinTreeTraversal.InOrder:
+                    InOrderTraversal(printValue, root);
+                    break;
+                case BinTreeTraversal.PostOrder:
+                    PostOrderTraversal(printValue, root);
+                    break;
+                default: break;
+            }
+        }
+
+        public void PreOrderTraversal(Action action, Node root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            action(root.val);
+            PreOrderTraversal(action, root.left);
+            PreOrderTraversal(action, root.right);
+        }
+
+        public void InOrderTraversal(Action action, Node root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            InOrderTraversal(action, root.left);
+            action(root.val);
+            InOrderTraversal(action, root.right);
+        }
+
+        public void PostOrderTraversal(Action action, Node root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            PostOrderTraversal(action, root.left);
+            PostOrderTraversal(action, root.right);
+            action(root.val);
+        }
     }
 
 }
