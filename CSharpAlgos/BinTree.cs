@@ -75,20 +75,20 @@ namespace CSharpAlgos
         }
         private void DisplayBinTreeInOrderTrav(Node root)
         {
-            // if root
+            // if root is null return
             if (root == null) return;
+            // start with _root traversal
             DisplayBinTreeInOrderTrav(root.left);
+            // print the value of root to the console
             Console.WriteLine(root.val + " ");
+            // once left branch of tree is done, traverse right side, printing values to console
             DisplayBinTreeInOrderTrav(root.right);
         }
         public void DisplayBinTreeInOrderTrav()
         {
             DisplayBinTreeInOrderTrav(_root);
         }
-        private void DisplayBinTreePreOrderTrav(Node root)
-        {
-
-        }
+        
     }
 
 }
