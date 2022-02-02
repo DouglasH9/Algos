@@ -168,6 +168,14 @@ namespace CSharpAlgos
 
             if (root != null) return binTreeLevels;
             HelperFunc(root, 0);
+            foreach(List<int> level in binTreeLevels)
+            {
+                for(int i = 0; i < level.Count; i++)
+                {
+                    Console.WriteLine(level[i]);
+                }
+            }
+            Console.WriteLine(binTreeLevels[0][0]);
             return binTreeLevels;
         }
     }

@@ -30,7 +30,7 @@ namespace CSharpAlgos
             newTree.InsertToBinTree(8);
             newTree.InsertToBinTree(14);
             newTree.InsertToBinTree(21);
-            newTree.DisplayBinTreeInOrderTrav();
+            // newTree.DisplayBinTreeInOrderTrav();
             Console.WriteLine("__________________________");
             newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.InOrder);
             Console.WriteLine("__________________________");
