@@ -150,7 +150,14 @@ namespace CSharpAlgos
 
         public List<List<int>> LevelOrderTraversal()
         {
-            
+            List<List<int>> listOfLists = new List<List<int>>();
+            List<int> numList = new List<int>();
+            numList.Add(2);
+            numList.Add(3);
+            numList.Add(4);
+            listOfLists.Add(numList);
+            Console.WriteLine(listOfLists[0][2]);
+            return listOfLists;
         }
     }
 
