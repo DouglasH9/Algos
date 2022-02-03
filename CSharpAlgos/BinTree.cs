@@ -187,7 +187,16 @@ namespace CSharpAlgos
                 // recursive call to .right of current node
                 if (node.right != null) {HelperFunc(node.right, level +1, binTreeLevels);}
             }
-            
         }
+        public int MaximumDepth(Node root)
+        {
+            if (root == null) {return 0;} else {
+                int left_depth = MaximumDepth(root.left);
+                int right_depth = MaximumDepth(root.right);
+                // Console.WriteLine(Math.Max(left_depth, right_depth));
+                return Math.Max(left_depth, right_depth) + 1;
+            }
+        } 
+        
     }
 }
