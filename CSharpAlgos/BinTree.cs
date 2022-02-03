@@ -150,9 +150,11 @@ namespace CSharpAlgos
 
         public List<List<int>> LevelOrderTraversal(Node root)
         {
+            // create a List to store a List of values for each level. List of lists.
             List<List<int>> binTreeLevels = new List<List<int>>();
+            // call on helper function to recurse through tree and add values to proper Lists
             HelperFunc(root, 0, binTreeLevels);
-            // binTreeLevels.Reverse();
+            // foreach loop to print each level with values to console
             foreach(List<int> level in binTreeLevels)
             {
                 Console.WriteLine("_____________");
@@ -164,23 +166,28 @@ namespace CSharpAlgos
             }
             return binTreeLevels;
 
+            // helper function to recurse through tree, will take in root node, level number, and previously declared List of Lists as arguments
             void HelperFunc(Node node, int level, List<List<int>> binTreeLevels)
             {
+                // base case. if root of bin tree is null, return
                 if (node == null) {return;}
 
+                // check to see if Count of List items is equal to or greater than level, if so, add new empty List to List of Lists
                 if (level >= binTreeLevels.Count)
                 {
                     binTreeLevels.Add(new List<int>());
                 }
 
+                // adds node.val to appropriate level's list
                 binTreeLevels[level].Add(node.val);
 
+                // recursive call to .left of current node
                 if (node.left != null) {HelperFunc(node.left, level +1, binTreeLevels);}
 
+                // recursive call to .right of current node
                 if (node.right != null) {HelperFunc(node.right, level +1, binTreeLevels);}
             }
             
         }
     }
-
 }
