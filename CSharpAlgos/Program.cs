@@ -24,12 +24,12 @@ namespace CSharpAlgos
             BinTree newTree = new BinTree();
             Node root = new Node(3);
             newTree.InsertToBinTree(root.val);
-            newTree.InsertToBinTree(4);
             newTree.InsertToBinTree(7);
-            newTree.InsertToBinTree(11);
+            newTree.InsertToBinTree(4);
+            newTree.InsertToBinTree(21);
             newTree.InsertToBinTree(8);
             newTree.InsertToBinTree(14);
-            newTree.InsertToBinTree(21);
+            newTree.InsertToBinTree(11);
             // newTree.DisplayBinTreeInOrderTrav();
             Console.WriteLine("__________________________");
             newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.InOrder);
@@ -38,7 +38,7 @@ namespace CSharpAlgos
             Console.WriteLine("__________________________");
             newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.PostOrder);
             Console.WriteLine("__________________________");
-            Console.WriteLine(newTree.LevelOrderTraversal(newTree._root));
+            newTree.LevelOrderTraversal(newTree._root);
         }
     }
 }

@@ -151,24 +151,35 @@ namespace CSharpAlgos
         public List<List<int>> LevelOrderTraversal(Node root)
         {
             List<List<int>> binTreeLevels = new List<List<int>>();
-            
-            void HelperFunc(Node node, int level)
+            HelperFunc(root, 0, binTreeLevels);
+            // binTreeLevels.Reverse();
+            foreach(List<int> level in binTreeLevels)
             {
-                if (binTreeLevels.Count == level)
+                Console.WriteLine("_____________");
+
+                for (int i = 0; i < level.Count; i++)
+                {
+                    Console.WriteLine(level[i]);
+                }
+            }
+            return binTreeLevels;
+
+            void HelperFunc(Node node, int level, List<List<int>> binTreeLevels)
+            {
+                if (node == null) {return;}
+
+                if (level >= binTreeLevels.Count)
                 {
                     binTreeLevels.Add(new List<int>());
                 }
 
                 binTreeLevels[level].Add(node.val);
 
-                if (node.left != null) HelperFunc(node.left, level +1);
+                if (node.left != null) {HelperFunc(node.left, level +1, binTreeLevels);}
 
-                if (node.right != null) {HelperFunc(node.right, level +1);}
+                if (node.right != null) {HelperFunc(node.right, level +1, binTreeLevels);}
             }
-
-            if (root != null) {return binTreeLevels;}
-            HelperFunc(root, 0);
-            return binTreeLevels;
+            
         }
     }
 
