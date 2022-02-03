@@ -38,7 +38,7 @@ namespace CSharpAlgos
             Console.WriteLine("__________________________");
             newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.PostOrder);
             Console.WriteLine("__________________________");
-            newTree.LevelOrderTraversal(newTree._root);
+            Console.WriteLine(newTree.LevelOrderTraversal(newTree._root));
         }
     }
 }
