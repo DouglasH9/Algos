@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace CSharpAlgos
 {
+    // This program is actually a Binary SEARCH Tree, but most of the methods will work on a Bin Heap as well
     public class Node
     {
         // define attributes of Node
