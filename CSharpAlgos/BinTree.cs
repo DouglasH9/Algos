@@ -200,5 +200,25 @@ namespace CSharpAlgos
             }
         } 
         
+        public Boolean IsSymmetrical(Node root)
+        {
+            // plug root node of tree into IsMirror helper func to start recursion.
+            return IsMirror(root, root);
+
+            // helper func checking to see if nodes mirror each other
+            Boolean IsMirror(Node leftNode, Node rightNode)
+            {
+                // check to first see if root.left or root.left are null. if both null, return true, if not, return false
+                if (leftNode == null && rightNode == null){return true;}
+                if (leftNode == null || rightNode == null){return false;}
+
+                // recursively check to see if all sub nodes mirror each other on each side, will return false if they do no at any point. first check to see if roots of subtrees equal each other...
+                return (leftNode.val == rightNode.val)
+                    // checks to see if .right of left subroot equals .left of right subroot
+                    && IsMirror(leftNode.right, rightNode.left)
+                    // checks to see if .left of left subroot equals .right right subroot
+                    && IsMirror(leftNode.left, rightNode.right);
+            }
+        }
     }
 }
