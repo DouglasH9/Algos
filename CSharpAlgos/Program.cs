@@ -32,15 +32,17 @@ namespace CSharpAlgos
             newTree.InsertToBinTree(8);
             newTree.InsertToBinTree(14);
             newTree.InsertToBinTree(11);
+            newTree.InsertToBinTree(10);
             // newTree.DisplayBinTreeInOrderTrav();
-            Console.WriteLine("__________________________");
-            newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.InOrder);
-            Console.WriteLine("__________________________");
-            newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.PreOrder);
-            Console.WriteLine("__________________________");
-            newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.PostOrder);
+            // Console.WriteLine("__________________________");
+            // newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.InOrder);
+            // Console.WriteLine("__________________________");
+            // newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.PreOrder);
+            // Console.WriteLine("__________________________");
+            // newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.PostOrder);
             Console.WriteLine("__________________________");
             // newTree.LevelOrderTraversal(newTree._root);
+            Console.WriteLine("__________________________");
             Console.WriteLine(newTree.MaximumDepth(newTree._root));
         }
     }

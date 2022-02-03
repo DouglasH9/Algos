@@ -192,7 +192,9 @@ namespace CSharpAlgos
         {
             if (root == null) {return 0;} else {
                 int left_depth = MaximumDepth(root.left);
+                Console.WriteLine($"node.val = {root.val}, left depth: {left_depth}");
                 int right_depth = MaximumDepth(root.right);
+                Console.WriteLine($"node.val = {root.val}, right depth: {right_depth}");
                 // Console.WriteLine(Math.Max(left_depth, right_depth));
                 return Math.Max(left_depth, right_depth) + 1;
             }
