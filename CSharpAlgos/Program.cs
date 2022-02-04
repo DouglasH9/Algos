@@ -33,6 +33,10 @@ namespace CSharpAlgos
             newTree.InsertToBinTree(14);
             newTree.InsertToBinTree(11);
             newTree.InsertToBinTree(10);
+            BinTree symTree = new BinTree();
+            symTree.InsertToBinTree(2);
+            // symTree.InsertToBinTree(1);
+            // symTree.InsertToBinTree(1);
             // newTree.DisplayBinTreeInOrderTrav();
             // Console.WriteLine("__________________________");
             // newTree.PrintTree(newTree._root, BinTree.BinTreeTraversal.InOrder);
@@ -43,7 +47,9 @@ namespace CSharpAlgos
             Console.WriteLine("__________________________");
             // newTree.LevelOrderTraversal(newTree._root);
             Console.WriteLine("__________________________");
-            Console.WriteLine(newTree.MaximumDepth(newTree._root));
+            // Console.WriteLine(newTree.MaximumDepth(newTree._root));
+            symTree.LevelOrderTraversal(symTree._root);
+            Console.WriteLine(symTree.IsSymmetrical(symTree._root));
         }
     }
 }
