@@ -221,5 +221,19 @@ namespace CSharpAlgos
                     && IsMirror(leftNode.left, rightNode.right);
             }
         }
+
+        public bool HasPathSum(Node root, int sum)
+        {
+            if (root == null){return false;}
+            if (sum == 0){return true;}
+
+            sum -= root.val;
+            Console.WriteLine(sum);
+
+            if(root.left == null && root.right == null){return(sum == 0);}
+
+            return HasPathSum(root.left, sum) || HasPathSum(root.right, sum);
+        }
+
     }
 }

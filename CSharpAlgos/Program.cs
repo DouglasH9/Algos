@@ -48,8 +48,9 @@ namespace CSharpAlgos
             // newTree.LevelOrderTraversal(newTree._root);
             Console.WriteLine("__________________________");
             // Console.WriteLine(newTree.MaximumDepth(newTree._root));
-            symTree.LevelOrderTraversal(symTree._root);
-            Console.WriteLine(symTree.IsSymmetrical(symTree._root));
+            // symTree.LevelOrderTraversal(symTree._root);
+            // Console.WriteLine(symTree.IsSymmetrical(symTree._root));
+            Console.WriteLine(newTree.HasPathSum(newTree._root, 24));
         }
     }
 }
