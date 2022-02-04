@@ -224,14 +224,19 @@ namespace CSharpAlgos
 
         public bool HasPathSum(Node root, int sum)
         {
+            // returns false if root has null value
             if (root == null){return false;}
+            // returns true when sum == 0, meaning theres a path to equal target sum
             if (sum == 0){return true;}
 
+            // subtract the value of each node from the sum as it recurs through the tree
             sum -= root.val;
-            Console.WriteLine(sum);
+            // Console.WriteLine(sum);
 
+            // if .left and .right of root are null, check to see if sum -= root.val == 0
             if(root.left == null && root.right == null){return(sum == 0);}
 
+            // pass the left and right nodes from the root into function to check recursively if there's a sum path
             return HasPathSum(root.left, sum) || HasPathSum(root.right, sum);
         }
 
