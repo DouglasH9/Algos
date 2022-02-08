@@ -86,6 +86,7 @@ namespace CSharpAlgos
         public CircularQueueTwo(int n)
         {
             this.data = new int[n];
+            // set head and tail to -1, so when queue is empty, the value of their index will be -1
             this.head = -1;
             this.tail = -1;
             this.size = n;
@@ -93,44 +94,59 @@ namespace CSharpAlgos
 
         public bool EnQueue(int val)
         {
+            // return false if queue is full 
             if (this.IsFull() == true){return false;}
 
+            // return false if queue is empty
             if (this.IsEmpty() == true){this.head = 0;}
 
+            // move the index of the tail forward by one, unless the index is at the end of the array, then move tail to index at 0
             this.tail = (this.tail + 1) % this.size;
+
+            // add the value of val to the tail index
             this.data[tail] = val;
             return true;
         }
         public bool DeQueue()
         {
+            // return false if nothing to deQueue
             if (this.IsEmpty() == true){return false;}
+
+            // if there's only one element in the array, i.e the head is the tail, set the index of head and tail to -1 and return true
             if (this.head == this.tail) 
             {
                 this.head = -1;
                 this.tail = -1;
                 return true;
             }
+            // move the head forward one index in the array, unless head is at the end of the array, then set index of head to 0
             this.head = (this.head +1) % this.size;
             return true;
         }
         public int Front()
         {
+            // return -1 to show that queue is already empty
             if (this.IsEmpty() == true){return -1;}
 
+            // return value at the head index
             return this.data[head];
         }
         public int Rear()
         {
+            // return -1 if queue is already empty
             if (this.IsEmpty() == true){return -1;}
 
+            // return the value of tail index
             return this.data[tail];
         }
         public bool IsEmpty()
         {
+            // if head index equals -1 then queue is empty
             return this.head == -1;
         }
         public bool IsFull()
-        {
+        {   
+            // if tail index plus one, modulo the size of the array equals the head index, then the array is full
             return ((this.tail + 1) % this.size) == head;
         }
     }
