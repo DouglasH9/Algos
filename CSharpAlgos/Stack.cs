@@ -46,5 +46,31 @@ namespace CSharpAlgos
             // return true to show that element was successfully removed
             return true;
         }
+
+        public int Front()
+        {
+            // return a -1 if the queue is empty
+            if (this.count == 0) {return -1;}
+
+            // return whatever value is at this.queue[this.headIndex]
+            return this.queue[this.headIndex];
+        }
+
+        public int Rear()
+        {
+            // return -1 if queue is empty
+            if (this.count == 0){return -1;}
+
+            // set tail index to head index plus the count -1 modulo the capacity. use (count - 1) because the first spot in the queue has an index of zero
+            int tailIndex = (this.headIndex + this.count - 1) % this.capacity;
+            // return the value of whatever is at this.queue[tailIndex]
+            return this.queue[tailIndex];
+        }
+
+        public bool IsEmpty()
+        {return (this.count == 0);}
+
+        public bool IsFull()
+        {return (this.count == this.capacity);}
     }
 }
