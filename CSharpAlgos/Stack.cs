@@ -32,5 +32,19 @@ namespace CSharpAlgos
             // return true to show that val was inserted
             return true;
         }
+
+        public bool DeQueue()
+        {
+            // return false if there's nothing in the queue to dequeue...
+            if (this.count == 0)
+            {return false;}
+
+            // move the head index to (head index + 1) % capacity. will keep moving the head index forward by one until the (head index + 1) = capacity, then it will reset the head index to 0
+            this.headIndex = (this.headIndex + 1) % this.capacity;
+            // subtract 1 from this.count since we removed an element
+            this.count -= 1;
+            // return true to show that element was successfully removed
+            return true;
+        }
     }
 }
