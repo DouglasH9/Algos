@@ -227,7 +227,7 @@ namespace CSharpAlgos
             // returns false if root has null value
             if (root == null){return false;}
             // returns true when sum == 0, meaning theres a path to equal target sum
-            if (sum == 0){return true;}
+            // if (sum == 0){return true;}
 
             // subtract the value of each node from the sum as it recurs through the tree
             sum -= root.val;
