@@ -54,6 +54,17 @@ namespace CSharpAlgos
             CircularQueueTwo testQueue = new CircularQueueTwo(5);
             Console.WriteLine(testQueue.EnQueue(4));
             Console.WriteLine(testQueue.Front());
+            Console.WriteLine(testQueue.IsEmpty());
+            Console.WriteLine(testQueue.IsFull());
+            testQueue.EnQueue(9);
+            testQueue.EnQueue(56);
+            testQueue.EnQueue(100);
+            testQueue.EnQueue(7);
+            Console.WriteLine(testQueue.EnQueue(12));
+            Console.WriteLine(testQueue.Front());
+            Console.WriteLine(testQueue.IsFull());
+            testQueue.DeQueue();
+            Console.WriteLine(testQueue.Front());
         }
     }
 }
