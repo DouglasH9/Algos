@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace CSharpAlgos
 {
     // module that will utilize the STACK data structure for various algos
-    public class CircularQueue
+    public class CircularQueueOne
     {
         private int[] queue;
         private int headIndex;
         private int count;
         private int capacity;
 
-        public CircularQueue(int n)
+        public CircularQueueOne(int n)
         {
             this.capacity = n;
             this.queue = new int[n];
@@ -74,5 +74,64 @@ namespace CSharpAlgos
         public bool IsFull()
         // checks to see i queue is full
         {return (this.count == this.capacity);}
+    }
+
+    public class CircularQueueTwo
+    {
+        private int[] data;
+        private int head;
+        private int tail;
+        private int size;
+
+        public CircularQueueTwo(int n)
+        {
+            this.data = new int[n];
+            this.head = -1;
+            this.tail = -1;
+            this.size = n;
+        }
+
+        public bool EnQueue(int val)
+        {
+            if (this.IsFull() == true){return false;}
+
+            if (this.IsEmpty() == true){this.head = 0;}
+
+            this.tail = (this.tail + 1) % this.size;
+            this.data[tail] = val;
+            return true;
+        }
+        public bool DeQueue()
+        {
+            if (this.IsEmpty() == true){return false;}
+            if (this.head == this.tail) 
+            {
+                this.head = -1;
+                this.tail = -1;
+                return true;
+            }
+            this.head = (this.head +1) % this.size;
+            return true;
+        }
+        public int Front()
+        {
+            if (this.IsEmpty() == true){return -1;}
+
+            return this.data[head];
+        }
+        public int Rear()
+        {
+            if (this.IsEmpty() == true){return -1;}
+
+            return this.data[tail];
+        }
+        public bool IsEmpty()
+        {
+            return this.head == -1;
+        }
+        public bool IsFull()
+        {
+            return ((this.tail + 1) % this.size) == head;
+        }
     }
 }

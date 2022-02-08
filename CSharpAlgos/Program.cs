@@ -51,6 +51,9 @@ namespace CSharpAlgos
             // symTree.LevelOrderTraversal(symTree._root);
             // Console.WriteLine(symTree.IsSymmetrical(symTree._root));
             // Console.WriteLine(newTree.HasPathSum(newTree._root, 24));
+            CircularQueueTwo testQueue = new CircularQueueTwo(5);
+            Console.WriteLine(testQueue.EnQueue(4));
+            Console.WriteLine(testQueue.Front());
         }
     }
 }
