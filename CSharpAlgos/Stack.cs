@@ -68,9 +68,11 @@ namespace CSharpAlgos
         }
 
         public bool IsEmpty()
+        // checks to see if queue is empty
         {return (this.count == 0);}
 
         public bool IsFull()
+        // checks to see i queue is full
         {return (this.count == this.capacity);}
     }
 }
