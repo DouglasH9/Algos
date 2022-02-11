@@ -47,3 +47,6 @@ class SlidingWindowDoubleEndedQueue:
         # return the new window_sum divided by either the size of the window (if window is full) or the count (if window isn't full), whichever is smaller
         return self.window_sum / min(self.size, self.count)
 
+cool_slide = SlidingWindowDoubleEndedQueue(5)
+ 
+
