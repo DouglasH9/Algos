@@ -38,7 +38,7 @@ class SlidingWindowDoubleEndedQueue:
         self.count += 1
         # append new value to right side of queue
         self.queue.append(val)
-        # pop the value of the left side of the queue if the number of things in the queue is bigger than its size
+        # pop the value of the left side of the queue if the number of things in the queue is bigger than its size else, set it to zero so it won't effect the sum when added
         tail = self.queue.popleft() if self.count > self.size else 0
 
         # subtract the value of the recently popped tail from the window sum and add the new value
