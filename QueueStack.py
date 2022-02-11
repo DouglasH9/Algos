@@ -48,10 +48,10 @@ class SlidingWindowDoubleEndedQueue:
         return self.window_sum / min(self.size, self.count)
 
 cool_slide = SlidingWindowDoubleEndedQueue(5)
-cool_slide.next(2)
-cool_slide.next(3)
-cool_slide.next(8)
-cool_slide.next(9)
-cool_slide.next(10)
+print(cool_slide.next(2))
+print(cool_slide.next(3))
+print(cool_slide.next(8))
+print(cool_slide.next(9))
+print(cool_slide.next(10))
 print(cool_slide.next(3))
 
