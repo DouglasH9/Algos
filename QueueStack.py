@@ -9,3 +9,4 @@ class MovingAverage:
         window_sum = sum(queue[-size:])
 
         return window_sum / min(len(queue), size)
+
