@@ -70,7 +70,7 @@ Fill each empty room with the distance to its nearest gate. If it is impossible 
 Rooms is 2d array input
 """
 
-def walls_and_gates(rooms: List[List[int]]) -> List[List[int]]:
+def walls_and_gates(rooms):
     if not rooms:
         return
     row, column = len(rooms), len(rooms[0])
