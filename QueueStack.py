@@ -1,4 +1,4 @@
-from ast import List
+
 from collections import deque
 from ctypes import sizeof
 import random
@@ -70,7 +70,7 @@ Fill each empty room with the distance to its nearest gate. If it is impossible 
 Rooms is 2d array input
 """
 
-def walls_and_gates(rooms):
+def walls_and_gates(rooms: list[list[int]]) -> list[list[int]]:
     if not rooms:
         return
     row, column = len(rooms), len(rooms[0])
