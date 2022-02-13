@@ -1,12 +1,15 @@
 from collections import deque
 from ctypes import sizeof
+import random
 from types import new_class
 
 """
 Queue and Stack algos with Python
-"""
 
-#Sliding window average algorithm. Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+
+
+Sliding window average algorithm. Given a stream of integers and a window size, calculate the moving average of all integers in the sliding window.
+"""
 
 # Time complexity O(N)
 class MovingAverage:
@@ -47,11 +50,43 @@ class SlidingWindowDoubleEndedQueue:
         # return the new window_sum divided by either the size of the window (if window is full) or the count (if window isn't full), whichever is smaller
         return self.window_sum / min(self.size, self.count)
 
-cool_slide = SlidingWindowDoubleEndedQueue(5)
-print(cool_slide.next(2))
-print(cool_slide.next(3))
-print(cool_slide.next(8))
-print(cool_slide.next(9))
-print(cool_slide.next(10))
-print(cool_slide.next(3))
+# cool_slide = SlidingWindowDoubleEndedQueue(5)
+# print(cool_slide.next(2))
+# print(cool_slide.next(3))
+# print(cool_slide.next(8))
+# print(cool_slide.next(9))
+# print(cool_slide.next(10))
+# print(cool_slide.next(3))
 
+"""
+You are given an m x n grid rooms initialized with these three possible values.
+
+-1 A wall or an obstacle.
+0 A gate.
+INF Infinity means an empty room. We use the value 231 - 1 = 2147483647 to represent INF as you may assume that the distance to a gate is less than 2147483647.
+Fill each empty room with the distance to its nearest gate. If it is impossible to reach a gate, it should be filled with INF.
+
+Rooms is 2d array input
+"""
+
+def walls_and_gates(rooms):
+    if not rooms:
+        return
+    row, column = len(rooms), len(rooms[0])
+    for i in range(row):
+        for j in range(column):
+            if rooms[i][j] == 0:
+                queue = deque([])
+                queue.append((i+1, j, 1)); queue.append((i-1, j, 1))
+                queue.append((i, j+1, 1)); queue.append((i, j-1, 1))
+                visited = set()
+                while queue:
+                    x, y, val = queue.popleft()
+                    if x < 0 or x >= row or y < 0 or y >= column or rooms[x][y] in [0,-1] or (x,y) in visited:
+                        continue
+                    visited.add((x,y))
+                    rooms[x][y] = min(rooms[x][y], val)
+                    queue.append((x+1, y, val+1)); queue.append((x-1, y, val+1))
+                    queue.append((x, y+1, val+1)); queue.append((x, y-1, val+1))
+
+print(walls_and_gates([[2147483647,-1,0,2147483647],[2147483647,2147483647,2147483647,-1],[2147483647,-1,2147483647,-1],[0,-1,2147483647,2147483647]]))
