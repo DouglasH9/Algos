@@ -71,18 +71,27 @@ Rooms is 2d array input
 """
 
 def walls_and_gates(rooms: list[list[int]]) -> list[list[int]]:
+    # return if there's no rooms to search
     if not rooms:
         return
+    # define the rows and columns
     row, column = len(rooms), len(rooms[0])
+    # iterate over all the rooms
     for i in range(row):
         for j in range(column):
+            # if the room is 0 (a gate) add it to the queue
             if rooms[i][j] == 0:
                 queue = deque([])
+                # look at all the adjacent rooms and append it's coordinate and distance from gate as a tuple
                 queue.append((i+1, j, 1)); queue.append((i-1, j, 1))
                 queue.append((i, j+1, 1)); queue.append((i, j-1, 1))
+                # create set to store visited rooms
                 visited = set()
+                # while there's things in the queue...
                 while queue:
+                    # pop off the left value of queue and store values from tuple in x, y, val
                     x, y, val = queue.popleft()
+                    
                     if x < 0 or x >= row or y < 0 or y >= column or rooms[x][y] in [0,-1] or (x,y) in visited:
                         continue
                     visited.add((x,y))
