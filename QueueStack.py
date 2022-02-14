@@ -112,14 +112,20 @@ An island is surrounded by water and is formed by connecting adjacent lands hori
 """
 
 def num_islands(grid: list[list[str]]) -> int:
+    # if there's no grid, return 0
     if not grid:
         return 0
+    # define the size of "map" as m(len of outer list) by n(len of inner lists)
     m, n = len(grid), len(grid[0])
+    # directions for depth first search to look at around each grid square
     DIR = [0, 1, 0, -1, 0]
 
     def depth_first_search(row, col):
+        # if the row or column is less than zero or equal to the length or height of the "map," return zero
         if row < 0 or row == m or col < 0 or col == n or grid[row][col] == "0": return 0
+        # flip visited square to zero
         grid[row][col] = "0"
+        # recursive call to find all the surrounding 1's if 1 is found
         for i in range(4):
             depth_first_search(row + DIR[i], col + DIR[i+1])
         return 1
