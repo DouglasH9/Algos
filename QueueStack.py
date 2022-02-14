@@ -131,7 +131,7 @@ def num_islands(grid: list[list[str]]) -> int:
         return 1
 
     answer = 0
-    # loop through all the 
+    # loop through all the grid squares, calling on DFS each time, and add 1 each time an island is found
     for row in range(m):
         for col in range(n):
             answer += depth_first_search(row, col)
