@@ -2,6 +2,7 @@
 from collections import deque
 from ctypes import sizeof
 import random
+from re import search
 from types import new_class
 
 """
@@ -102,4 +103,36 @@ def walls_and_gates(rooms: list[list[int]]) -> list[list[int]]:
 
 # print(walls_and_gates([[2147483647,-1,0,2147483647],[2147483647,2147483647,2147483647,-1],[2147483647,-1,2147483647,-1],[0,-1,2147483647,2147483647]]))
 
+"""
+Number of Islands
 
+Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+"""
+
+def num_islands(grid: list[list[str]]) -> int:
+    if not grid:
+        return 0
+    m, n = len(grid), len(grid[0])
+    DIR = [0, 1, 0, -1, 0]
+
+    def depth_first_search(row, col):
+        if row < 0 or row == m or col < 0 or col == n or grid[row][col] == "0": return 0
+        grid[row][col] = "0"
+        for i in range(4):
+            depth_first_search(row + DIR[i], col + DIR[i+1])
+        return 1
+
+    answer = 0
+    for row in range(m):
+        for col in range(n):
+            answer += depth_first_search(row, col)
+    return answer
+
+print(num_islands([
+    ["1","1","0","0","0"],
+    ["1","1","0","0","0"],
+    ["0","0","1","0","0"],
+    ["0","0","0","1","1"]
+]))
