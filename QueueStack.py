@@ -125,12 +125,13 @@ def num_islands(grid: list[list[str]]) -> int:
         if row < 0 or row == m or col < 0 or col == n or grid[row][col] == "0": return 0
         # flip visited square to zero
         grid[row][col] = "0"
-        # recursive call to find all the surrounding 1's if 1 is found
+        # recursive call to find all the surrounding 1's if 1 is found. Loop through the values in DIR to look at what's around the grid square and return 1 when done.
         for i in range(4):
             depth_first_search(row + DIR[i], col + DIR[i+1])
         return 1
 
     answer = 0
+    # loop through all the 
     for row in range(m):
         for col in range(n):
             answer += depth_first_search(row, col)
