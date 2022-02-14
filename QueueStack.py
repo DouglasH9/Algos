@@ -118,7 +118,7 @@ def num_islands(grid: list[list[str]]) -> int:
     # define the size of "map" as m(len of outer list) by n(len of inner lists)
     m, n = len(grid), len(grid[0])
     # directions for depth first search to look at around each grid square
-    DIR = [0, 1, 0, -1, 0]
+    directions = [0, 1, 0, -1, 0]
 
     def depth_first_search(row, col):
         # if the row or column is less than zero or equal to the length or height of the "map," return zero
@@ -127,7 +127,7 @@ def num_islands(grid: list[list[str]]) -> int:
         grid[row][col] = "0"
         # recursive call to find all the surrounding 1's if 1 is found. Loop through the values in DIR to look at what's around the grid square and return 1 when done.
         for i in range(4):
-            depth_first_search(row + DIR[i], col + DIR[i+1])
+            depth_first_search(row + directions[i], col + directions[i+1])
         return 1
 
     answer = 0
