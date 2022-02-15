@@ -1,5 +1,5 @@
 
-from collections import deque
+from collections import defaultdict, deque
 from ctypes import sizeof
 import random
 from re import search
@@ -153,15 +153,35 @@ You must implement a solution with a linear runtime complexity and use only cons
 """
 
 def single_number(nums: list[int]) -> int:
-    queue = []
+    # set up stack to store values to check
+    lonely_num_stack = [];
+    # take care of base cases where nums is empty or only contains one element
     if len(nums) < 1:
         return 0
     elif len(nums) == 1:
         return nums[0]
-    for i in range (len(nums)):
-        if not queue.contains(nums[i]):
-            queue.append(nums.pop(nums[i]))
-    return nums[0]
-
-print(single_number([1,2,2,3,3,4,4]))
+    for num in nums:
+        # iterate over nums and add num to lonely stack if not already in
+        if num not in lonely_num_stack:
+            lonely_num_stack.append(num)
+        # remove num if already in lonely stack
+        else:
+            lonely_num_stack.remove(num)
+    # return whatever value is left over
+    return lonely_num_stack.pop()
             
+
+# print(single_number([1,2,1,2,3,4,4]))
+
+# much faster solution with hash table(DON'T FORGET ABOUT HASH TABLES!!!)
+
+def single_number_two(nums: list[int]) -> int:
+    lonely_hash = defaultdict(int)
+    for num in nums:
+        lonely_hash[num] += 1
+
+    for num in lonely_hash:
+        if lonely_hash[num] == 1:
+            return num
+
+print(single_number_two([1,1,9,4,3,4,3]))
