@@ -137,9 +137,31 @@ def num_islands(grid: list[list[str]]) -> int:
             answer += depth_first_search(row, col)
     return answer
 
-print(num_islands([
-    ["1","1","0","0","1"],
-    ["1","1","0","0","0"],
-    ["0","0","1","0","0"],
-    ["0","0","0","1","1"]
-]))
+# print(num_islands([
+#     ["1","1","0","0","1"],
+#     ["1","1","0","0","0"],
+#     ["0","0","1","0","0"],
+#     ["0","0","0","1","1"]
+# ]))
+
+"""
+Single Number
+
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+"""
+
+def single_number(nums: list[int]) -> int:
+    queue = []
+    if len(nums) < 1:
+        return 0
+    elif len(nums) == 1:
+        return nums[0]
+    for i in range (len(nums)):
+        if not queue.contains(nums[i]):
+            queue.append(nums.pop(nums[i]))
+    return nums[0]
+
+print(single_number([1,2,2,3,3,4,4]))
+            
