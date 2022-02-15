@@ -176,10 +176,13 @@ def single_number(nums: list[int]) -> int:
 # much faster solution with hash table(DON'T FORGET ABOUT HASH TABLES!!!)
 
 def single_number_two(nums: list[int]) -> int:
+    # create hash table for nums. Use defaultdict because iterated lists can be added to it. Defaultdicts accept keys without values assigned, regular dicts do not.
     lonely_hash = defaultdict(int)
+    # iterate over nums and add them as keys to hash table, add one to their value every time they are encountered in the list
     for num in nums:
         lonely_hash[num] += 1
 
+    # iterate over hash table and check for key that has value of 1, and return it
     for num in lonely_hash:
         if lonely_hash[num] == 1:
             return num
