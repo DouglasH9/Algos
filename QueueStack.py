@@ -187,4 +187,12 @@ def single_number_two(nums: list[int]) -> int:
         if lonely_hash[num] == 1:
             return num
 
-print(single_number_two([1,1,9,4,3,4,3]))
+# print(single_number_two([1,1,9,4,3,4,3]))
+
+"""
+Swap Nodes in Pairs
+
+Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
+"""
+
+# Recursion
