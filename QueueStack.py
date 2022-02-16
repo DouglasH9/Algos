@@ -4,6 +4,7 @@ from ctypes import sizeof
 import random
 from re import search
 from types import new_class
+from typing import Optional
 
 """
 Queue and Stack algos with Python
@@ -196,3 +197,28 @@ Given a linked list, swap every two adjacent nodes and return its head. You must
 """
 
 # Recursion
+
+class ListNode:
+    def __init__(self, val=0, next=None) -> None:
+        self.val = val
+        self.next = next
+
+def swap_pairs_of_nodes(head: Optional[ListNode]) -> Optional[ListNode]:
+    if not head or not head.next:
+        return head
+
+    first_node = head
+    second_node = head.next
+
+    first_node.next = swap_pairs_of_nodes(second_node.next)
+    second_node.next = first_node
+
+    return second_node
+
+
+head = ListNode(2, None)
+head.next = ListNode(3, None)
+head.next.next = ListNode(4, None)
+head.next.next.next= ListNode(5, None)
+
+print(swap_pairs_of_nodes(head))
