@@ -254,6 +254,6 @@ def majority_element(nums: list[int]) -> int:
 def majority_element_fast(nums: list[int]) -> int:
     counts = Counter(nums)
     print(counts.keys())
-    return max(counts.keys(), key = counts.get)
+    return max(counts.keys())
 
 print(majority_element_fast([3,2,3]))
