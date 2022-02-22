@@ -254,6 +254,21 @@ def majority_element(nums: list[int]) -> int:
 def majority_element_fast(nums: list[int]) -> int:
     counts = Counter(nums)
     print(counts.keys())
-    return max(counts.keys())
+    return max(counts.keys(), key = counts.get)
 
-print(majority_element_fast([3,2,3]))
+# print(majority_element_fast([3,2,3,2]))
+
+
+# boyer-moore voting algorithm. fast and simple O(N)
+def maj_element_voting_algo(nums: list[int]) -> int:
+    count = 0
+    candidate = None
+
+    for num in nums:
+        if count == 0:
+            candidate = num
+        count += (1 if num == candidate else -1)
+
+    return candidate
+
+print(maj_element_voting_algo([2,2,4,4,5,5,5,6,7,7,8,8,8,8,8]))
