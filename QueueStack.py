@@ -1,8 +1,9 @@
 
-from collections import defaultdict, deque
+from collections import Counter, defaultdict, deque
 from ctypes import sizeof
 import random
 from re import search
+from tkinter import N
 from types import new_class
 from typing import Optional
 
@@ -221,4 +222,38 @@ head.next = ListNode(3, None)
 head.next.next = ListNode(4, None)
 head.next.next.next= ListNode(5, None)
 
-print(swap_pairs_of_nodes(head))
+# print(swap_pairs_of_nodes(head))
+
+"""
+Given an array nums of size n, return the majority element.
+
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+
+
+Example 1:
+
+Input: nums = [3,2,3]
+Output: 3
+Example 2:
+
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+"""
+
+# brute force double loop O(N^2)
+def majority_element(nums: list[int]) -> int:
+    n = len(nums)//2
+    for num in nums:
+        count = sum(1 for elem in nums if elem == num)
+        if count > n:
+            return num
+
+# print(majority_element([3,2,3]))
+
+# quicker solution that uses hash map Counter python object O(N)
+def majority_element_fast(nums: list[int]) -> int:
+    counts = Counter(nums)
+    print(counts.keys())
+    return max(counts.keys(), key = counts.get)
+
+print(majority_element_fast([3,2,3]))
