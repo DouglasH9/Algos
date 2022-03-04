@@ -419,7 +419,12 @@ root.insertToBinTree(8, "NightCall")
 # root.printBinTree()
 
 
+"""A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
 
+Given a string s, return true if it is a palindrome, or false otherwise."""
 
-
-
+def is_palindrome(letters: str) -> bool:
+    # use the filter method and isalnum string method to filter out anything that is not alphanumeric. filter takes in a funciton for the first argument and an iterable for the second. isalnum method checks to see if the chars in a string are alphanumeric
+    filtered_chars = filter(lambda ch: ch.isalnum(), str)
+    # map function takes in a function as the first argument and in iterable as the second, and applies the function to each item in the iterable
+    lower_case_filtered_chars = map(lambda ch: ch.lower(), filtered_chars)
