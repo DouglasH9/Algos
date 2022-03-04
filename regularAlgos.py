@@ -425,7 +425,7 @@ Given a string s, return true if it is a palindrome, or false otherwise."""
 
 def is_palindrome(letters: str) -> bool:
     # use the filter method and isalnum string method to filter out anything that is not alphanumeric. filter takes in a funciton for the first argument and an iterable for the second. isalnum method checks to see if the chars in a string are alphanumeric
-    filtered_chars = filter(lambda ch: ch.isalnum(), str)
+    filtered_chars = filter(lambda ch: ch.isalnum(), letters)
     # map function takes in a function as the first argument and in iterable as the second, and applies the function to each item in the iterable
     lower_case_filtered_chars = map(lambda ch: ch.lower(), filtered_chars)
     # use list() method to store filtered chars into a list
