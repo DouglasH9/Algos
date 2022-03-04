@@ -428,3 +428,11 @@ def is_palindrome(letters: str) -> bool:
     filtered_chars = filter(lambda ch: ch.isalnum(), str)
     # map function takes in a function as the first argument and in iterable as the second, and applies the function to each item in the iterable
     lower_case_filtered_chars = map(lambda ch: ch.lower(), filtered_chars)
+    # use list() method to store filtered chars into a list
+    filtered_chars_list = list(lower_case_filtered_chars)
+    # create reversed filtered chars list
+    reversed_chars_list = filtered_chars_list[::-1]
+
+    return reversed_chars_list == filtered_chars_list
+
+print(is_palindrome("racecaR"))
