@@ -436,3 +436,5 @@ def is_palindrome(letters: str) -> bool:
     return reversed_chars_list == filtered_chars_list
 
 print(is_palindrome("racecaR"))
+print(is_palindrome("Doug"))
+print(is_palindrome("Hey, yeh"))
